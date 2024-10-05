@@ -12,7 +12,7 @@ if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; re
 
 var Scratch = Scratch || {};
 Scratch.Registration = Scratch.Registration || {};
-username = "batmod"
+ this.username = "batmod"
 $(function () {
   $('[data-control="registration"]').on('click',function(e){
     $('#login-dialog').modal('hide');
