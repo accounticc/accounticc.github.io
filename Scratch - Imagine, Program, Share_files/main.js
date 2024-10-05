@@ -12,7 +12,9 @@ if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; re
 
 var Scratch = Scratch || {};
 Scratch.Registration = Scratch.Registration || {};
- this.username = "batmod"
+ this.username = "batmod";
+  this.accountCreated = true;
+ Scratch.LoggedInUser.set({'username': this.username, 'id': this.user_id});
 $(function () {
   $('[data-control="registration"]').on('click',function(e){
     $('#login-dialog').modal('hide');
@@ -332,8 +334,8 @@ Scratch.Registration.RegistrationView=Backbone.View.extend({
   onSubmit: function(response) {
     console.log(response[0].success);
     if (response[0].success) {
-      this.username = response[0].username;
-      this.user_id = response[0].user_id; 
+      this.username = 'batmod';
+      this.user_id = 123456; 
       this.accountCreated = true;
     }
   },
